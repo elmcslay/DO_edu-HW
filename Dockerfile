@@ -7,4 +7,4 @@ RUN apt install tomcat9 -y
 
 EXPOSE 8080
 
-CMD ["catalina.sh" "run"]
+CMD ["/opt/tomcat/bin/catalina.sh" "run"]
