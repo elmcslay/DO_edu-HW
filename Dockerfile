@@ -8,7 +8,7 @@ ENV TZ=Europe/Moscow
 RUN apt update
 RUN apt install git -y
 #RUN apt install default-jdk -y
-RUN apt install maven -y
+RUN apt install maven -y $_[11]
 RUN apt install tomcat9 -y
 
 EXPOSE 8080
