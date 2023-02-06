@@ -3,6 +3,8 @@ FROM ubuntu:20.04
 RUN rm -rf /etc/apt/sources.list
 ADD sources.list /etc/apt/
 
+ENV TZ=Europe/Moscow
+
 RUN apt update
 RUN apt install git -y
 #RUN apt install default-jdk -y
