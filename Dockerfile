@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN rm -rf /etc/apt/sources.list
-APT /etc/apt/sources.list /etc/apt/
+ADD /etc/apt/sources.list /etc/apt/
 
 RUN apt update
 RUN apt install git -y
@@ -16,5 +16,5 @@ RUN mvn package /var/local/
 RUN cp /var/local/target/hello-1.0.war /var/lib/tomcat9/webapps/
 
 
-#CMD ["/bin/bash"]
-CMD ["catalina.sh", "run"]
+CMD ["/bin/bash"]
+#CMD ["catalina.sh", "run"]
