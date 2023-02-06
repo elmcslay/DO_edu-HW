@@ -1,22 +1,22 @@
-FROM ubuntu:20.04
+FROM tomcat:9.0.71-jre11-temurin-focal
 
-RUN rm -rf /etc/apt/sources.list
-ADD sources.list /etc/apt/
+#RUN rm -rf /etc/apt/sources.list
+#ADD sources.list /etc/apt/
 
-ENV TZ=Europe/Moscow
+#ENV TZ=Europe/Moscow
 
 RUN apt update
-RUN apt install default-jdk -y
+#RUN apt install default-jdk -y
 RUN apt install maven -y 
-RUN apt install tomcat9 -y
+#RUN apt install tomcat9 -y
 RUN apt install git -y
 
-#EXPOSE 8080
+EXPOSE 8080
 
-#RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /var/local
-#RUN mvn package /var/local/
-#RUN cp /var/local/target/hello-1.0.war /var/lib/tomcat9/webapps/
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /var/local
+RUN mvn package /var/local/
+RUN cp /var/local/target/hello-1.0.war /var/lib/tomcat9/webapps/
 
 
-CMD ["/bin/bash"]
-#CMD ["catalina.sh", "run"]
+#CMD ["/bin/bash"]
+CMD ["catalina.sh", "run"]
