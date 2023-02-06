@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN rm -rf /etc/apt/sources.list
-ADD /etc/apt/sources.list /etc/apt/
+ADD sources.list /etc/apt/
 
 RUN apt update
 RUN apt install git -y
