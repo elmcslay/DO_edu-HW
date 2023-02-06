@@ -1,5 +1,8 @@
 FROM ubuntu:20.04
 
+RUN rm -rf /etc/apt/sources.list
+APT /etc/apt/sources.list /etc/apt/
+
 RUN apt update
 RUN apt install git -y
 #RUN apt install default-jdk -y
