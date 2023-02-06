@@ -13,10 +13,10 @@ RUN apt install git -y
 
 EXPOSE 8080
 
-RUN cd /var/local
+RUN cd /tmp
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN mvn package
-RUN cp /var/local/target/hello-1.0.war /var/lib/tomcat9/webapps/
+RUN cp /tmp/target/hello-1.0.war /var/lib/tomcat9/webapps/
 
 
 #CMD ["/bin/bash"]
