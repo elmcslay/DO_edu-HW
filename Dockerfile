@@ -12,4 +12,4 @@ RUN apt install git -y
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/hw6
 WORKDIR /tmp/hw6/
 RUN mvn package
-RUN cp /target/hello-1.0.war $CATALINA_HOME/webapps/
+RUN cp target/hello-1.0.war $CATALINA_HOME/webapps/
