@@ -1,7 +1,7 @@
 FROM tomcat:9.0.71-jdk11-temurin-focal
 
 RUN rm -rf /etc/apt/sources.list
-ADD /etc/apt/sources.list /etc/apt/
+ADD sources.list /etc/apt/
 
 ENV TZ=Europe/Moscow
 
